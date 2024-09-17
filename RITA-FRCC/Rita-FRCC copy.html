@@ -96,37 +96,48 @@
     </style>
 </head>
 <body>
-	<table width="720" border="1" cellspacing="0" cellpadding="1">
+	<table width="800" border="1" cellspacing="0" cellpadding="1">
   <tbody>
     <tr>
-      <td width="213"><img src="RitaLM.jpg" width="221" height="220
+      <td width="213"><img src="RitaLM.jpg" width="220" height="220
 		  " alt=""/></td>
       <td width="577"><p>The best use of Rita, the socratic BiologyTutor, is to get feedback about <strong><em>your answers</em></strong> to specific questions.  </p>
       <p><em>If you just want an answer, google it. If you want to understand what is going on, talk with Rita.&nbsp;</em> <em>If you discover a response that seems incorrect, <a href="mailto:klym@colorado.edu">please let us know!</a></em></p>
       <h2 align="right"><span class="red">ALL</span> responses and conversations with Rita are anonymous; neither we nor your instructor can tell who you are!</h2>
       <p>– for Front Range Community College Fall 2024</p></td>
     </tr>
-    <tr>
-      <td><p><strong>Set 4-Q1</strong>: Explain the terms anti-parallel and complementary as they apply to double-straneded DNA.</p>
-        <p> Get feedback from Rita about your answer.<br>
-      </p></td>
-      <td><table width="800" border="1" cellspacing="0" cellpadding="1">
-        <tbody>
-          <tr>
-            <td>&nbsp;
-              <div id="customgpt_chat"></div>
-              <script src="https://cdn.customgpt.ai/js/embed.js" defer="" div_id="customgpt_chat" p_id="39053" p_key="17ce9cec9cd12d50990a9139c83fac28"></script></td>
-          </tr>
-        </tbody>
-      </table></td>
-    </tr>
-    <tr>
-      <td><p align="right"><a href="Rita-FRCC-2.html" target="_self">go to question 2</a></td>
-      <td>&nbsp;</td>
-    </tr>
   </tbody>
 </table>
-	<script>
+    <div class="container">
+        <div class="chat-container">
+          <div class="bot-label">Answer question 1: Explain the terms antiparallel and complementary as they apply to double-stranded DNA 
+          &amp; get feedback from Rita...</div>
+            <div class="chat-box" id="chatBox1"></div>
+            <div class="input-group">
+                <textarea id="userInput1" placeholder="Type your message to Nico 1..." rows="1"></textarea>
+                <button onclick="sendMessage(1)">Send</button>
+            </div>
+      </div>
+        
+        <div class="chat-container">
+          <div class="bot-label">Answer question 2: Compare and contrast the structure and function of DNA and RNA &amp; get feedback from Rita...</div>
+            <div class="chat-box" id="chatBox2"></div>
+            <div class="input-group">
+                <textarea id="userInput2" placeholder="Type your message to Nico 2..." rows="1"></textarea>
+                <button onclick="sendMessage(2)">Send</button>
+            </div>
+        </div>
+        
+        <div class="chat-container">
+          <div class="bot-label">Answer question 3: Describe the structure of ATP and explain how its structure leads to its function &amp; get feedback from Rita...</div>
+<div class="input-group">
+        <textarea id="userInput3" placeholder="Type your message to Nico 3..." rows="1"></textarea>
+                <button onclick="sendMessage(3)">Send</button>
+            </div>
+        </div>
+</div>
+
+    <script>
         const botConfig = [
             {
                 projectID: "38698",
