@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Width Vertical Multi-Bot Chat Interface</title>
+    <title>CU MCDB RITA Interface</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body, html {
@@ -13,125 +13,172 @@
             height: 100%;
             background-color: #f0f2f5;
             color: #1c1e21;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
         .container {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            max-width: 800px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             padding: 20px;
-            box-sizing: border-box;
+            text-align: center;
         }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            margin: 20px 0 10px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            color: #666;
+        }
+
         .chat-container {
-            background-color: #ffffff;
+            background-color: #f9f9f9;
             border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             overflow: hidden;
+            margin-bottom: 20px;
             display: flex;
             flex-direction: column;
-            margin-bottom: 20px;
-            height: calc(33% - 20px);
         }
+
         .bot-label {
-            background-color: #4267B2;
+            background-color: #4283b2;
             color: white;
             padding: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: left;
+            font-size: 18px;
+            font-weight: normal;
         }
+
         .chat-box {
             flex-grow: 1;
             overflow-y: auto;
             padding: 15px;
             display: flex;
             flex-direction: column;
+            max-height: 300px;
         }
-        .input-group {
-            display: flex;
-            padding: 10px;
-            background-color: #f0f2f5;
-        }
-        .input-group textarea {
-            flex: 1;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ced0d4;
-            border-radius: 20px;
-            resize: none;
-            font-family: 'Roboto', sans-serif;
-        }
-        .input-group button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4267B2;
-            color: white;
-            border: none;
-            border-radius: 20px;
-            margin-left: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .input-group button:hover {
-            background-color: #365899;
-        }
+
         .chat-message {
-            margin: 5px 0;
-            padding: 10px 15px;
+            margin: 10px 0;
+            padding: 12px 20px;
             border-radius: 18px;
             max-width: 70%;
             word-wrap: break-word;
+            text-align: left;
         }
+
         .chat-message.user {
             background-color: #4267B2;
             color: white;
             align-self: flex-end;
         }
+
         .chat-message.bot {
             background-color: #f0f2f5;
             color: #1c1e21;
             align-self: flex-start;
         }
-    .red {	color: #C33;
-}
+
+        .input-group {
+            display: flex;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f0f2f5;
+            border-radius: 10px;
+        }
+
+        .input-group textarea {
+            flex: 1;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ced0d4;
+            border-radius: 15px;
+            resize: none;
+        }
+
+        .input-group button {
+            padding: 12px 20px;
+            font-size: 16px;
+            background-color: #4267B2;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .input-group button:hover {
+            background-color: #365899;
+        }
+
+        .footer {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        .footer a {
+            color: #4267B2;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .red {
+            color: #C33;
+        }
     </style>
 </head>
+
 <body>
-	<table width="800" border="1" cellspacing="0" cellpadding="1">
-  <tbody>
-    <tr>
-      <td width="213"><img src="DeweyThinking.jpg" width="240" height="200" alt=""/></td>
-      <td width="577"><p>Dewey can analyze student answers to a wide range of questions, providing a detailed summary of necessary facts and concepts that are missing or misapplied in student answers, as well as generating suggestions for instructional approaches to address them. <br>
-          <br>
-          It is   particularly interested in questions that encourage mechanistic (3D) explanations and students' ability of address questions in terms of underlying concepts and necessary facts and observation. What to know more, check out this <a href="https://arxiv.org/abs/2406.07481" title="No more (simple) multiple choice tests" target="_blank">reference</a>.</p>
-        <p><em>If you discover a response that seems incorrect, <a href="mailto:klym@colorado.edu">please let us know!</a></em></p>
-        <h2 align="right"><span class="red">ALL</span> responses and conversations with Rita are anonymous; neither we nor your instructor can tell who you are!</h2>
-      <p> – for Teaching and Learning Biology 2024</p></td>
-    </tr>
-  </tbody>
-</table>
-      <table width="800" border="1" cellspacing="0" cellpadding="1">
-        <tbody>
+    <div class="container">
+        <div class="header"><img src="DeweyThinking.jpg" width="240" height="200" alt=""/>
+          <h1>Dewey - Your Biology Education Analyst/Consultant</h1>
+            <p>Dewey can analyze questions asked and students' answers, providing a  summary of necessary facts and concepts that are missing or misapplied. <br>
+          Dewy can   make suggestions for instructional approaches,<br>
+including draft qustions that encourage mechanistic (3D) explanations. <br>
+              <br>
+Want an example, check out  this <a href="https://arxiv.org/abs/2406.07481" title="No more (simple) multiple choice tests" target="_blank">reference</a>..</p>
+        </div>
+
+      <div class="chat-container">
+            <div class="bot-label">All conversations with Dewey are anonymous. If you find an issue, please <a href="mailto:klym@colorado.edu">let us know</a>. <br>
+            – for Teaching &amp; Learning Biology MCDB/EDUC 4811- UC Boulder Fall 2024 –</span></div><table width="800" border="1" cellspacing="0" cellpadding="1">
+           <tbody>
           <tr>
             <td>&nbsp;<div id="customgpt_chat"></div> <script src="https://cdn.customgpt.ai/js/embed.js" defer div_id="customgpt_chat" p_id="39052" p_key="ab37e706d01d17feb2c307fa4347b225"></script></td>
           </tr>
         </tbody>
       </table>
-
+      </div>
+        </div>
+        <p class="footer">&nbsp;</p>
+    </div>
     <script>
         const botConfig = [
             {
                 projectID: "38698",
                 sessionID: "cb822446-28da-4fa9-a187-cf94e48dc8f4",
-                authToken: "Bearer 4693|M1PACV1ZmFqWTA5YyndbHkbxo8i6H9H0jEMofqzUb2c0fb6a"
-            },
-            {
-                projectID: "39200",
-                sessionID: "8b60a574-7014-4273-8026-ac941ae89f00",
-                authToken: "Bearer 4693|M1PACV1ZmFqWTA5YyndbHkbxo8i6H9H0jEMofqzUb2c0fb6a"
-            },
-            {
-                projectID: "39201",
-                sessionID: "eab377b9-6009-469f-9a33-3e56df704a5e",
                 authToken: "Bearer 4693|M1PACV1ZmFqWTA5YyndbHkbxo8i6H9H0jEMofqzUb2c0fb6a"
             }
         ];
@@ -141,7 +188,6 @@
             const chatBox = document.getElementById(`chatBox${botId}`);
 
             if (userInput.value.trim() !== "") {
-                // Display user message
                 const userMessage = document.createElement('div');
                 userMessage.textContent = userInput.value;
                 userMessage.classList.add('chat-message', 'user');
@@ -160,43 +206,32 @@
 
                     const data = await response.json();
                     const botMessage = document.createElement('div');
-
-                    if (data.data && data.data.openai_response) {
-                        botMessage.textContent = data.data.openai_response;
-                    } else {
-                        botMessage.textContent = "Sorry, I couldn't understand that.";
-                    }
-
+                    botMessage.textContent = data.data?.openai_response || "Sorry, I couldn't understand that.";
                     botMessage.classList.add('chat-message', 'bot');
                     chatBox.appendChild(botMessage);
 
-                    chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the latest message
+                    chatBox.scrollTop = chatBox.scrollHeight;
                 } catch (error) {
                     console.error('Error:', error);
                 }
 
-                // Clear input box
                 userInput.value = '';
                 userInput.style.height = 'auto';
             }
         }
 
-        // Add event listeners for keypress and input events
-        for (let i = 1; i <= 3; i++) {
-            const userInput = document.getElementById(`userInput${i}`);
-            
-            userInput.addEventListener('keypress', function(e) {
-                if (e.key === 'Enter' && !e.shiftKey) {
-                    e.preventDefault();
-                    sendMessage(i);
-                }
-            });
+        document.getElementById('userInput1').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                sendMessage(1);
+            }
+        });
 
-            userInput.addEventListener('input', function() {
-                this.style.height = 'auto';
-                this.style.height = (this.scrollHeight) + 'px';
-            });
-        }
+        document.getElementById('userInput1').addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = (this.scrollHeight) + 'px';
+        });
     </script>
 </body>
+
 </html>

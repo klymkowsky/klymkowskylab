@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,11 +60,11 @@
         }
 
         .bot-label {
-            background-color: #4283b2;
+            background-color: #4267B2;
             color: white;
             padding: 10px;
             font-size: 18px;
-            font-weight: normal;
+            font-weight: bold;
         }
 
         .chat-box {
@@ -151,6 +152,7 @@
 </head>
 
 <body>
+
     <div class="container">
         <div class="header">
             <img src="RitaLM.jpg" alt="Rita">
@@ -158,19 +160,21 @@
             <p>Use Rita, a Socratic tutor, to get feedback on your answers to biology questions.</p>
         </div>
 
-      <div class="chat-container">
-            <div class="bot-label">All conversations with Rita are anonymous. If you find an issue, please <a href="mailto:klym@colorado.edu">let us know</a>. <br>
-            – for MCDB - UC Boulder Fall 2024 </span></div><table width="800" border="1" cellspacing="0" cellpadding="1">
-          <tbody>
-          <tr>
-            <td>&nbsp;<div id="customgpt_chat"></div> <script src="https://cdn.customgpt.ai/js/embed.js" defer="" div_id="customgpt_chat" p_id="39053" p_key="17ce9cec9cd12d50990a9139c83fac28"></script></td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
+        <div class="chat-container">
+            <div class="bot-label">RITA Chat</div>
+            <div class="chat-box" id="chatBox1"></div>
+            <div class="input-group">
+                <textarea id="userInput1" placeholder="Type your question..." rows="1"></textarea>
+                <button onclick="sendMessage(1)">Send</button>
+            </div>
         </div>
-        <p class="footer">&nbsp;</p>
+
+        <p class="footer">
+            All conversations with Rita are anonymous. If you find an issue, please <a href="mailto:klym@colorado.edu">let us know</a>.
+            <br>– for MCDB - UC Boulder Fall 2024
+        </p>
     </div>
+
     <script>
         const botConfig = [
             {
