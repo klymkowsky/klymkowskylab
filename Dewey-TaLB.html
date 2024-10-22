@@ -173,65 +173,6 @@ Want an example, check out  this <a href="https://arxiv.org/abs/2406.07481" titl
       </div>
         </div>
         <p class="footer">&nbsp;</p>
-    </div>
-    <script>
-        const botConfig = [
-            {
-                projectID: "38698",
-                sessionID: "cb822446-28da-4fa9-a187-cf94e48dc8f4",
-                authToken: "Bearer 4693|M1PACV1ZmFqWTA5YyndbHkbxo8i6H9H0jEMofqzUb2c0fb6a"
-            }
-        ];
-
-        async function sendMessage(botId) {
-            const userInput = document.getElementById(`userInput${botId}`);
-            const chatBox = document.getElementById(`chatBox${botId}`);
-
-            if (userInput.value.trim() !== "") {
-                const userMessage = document.createElement('div');
-                userMessage.textContent = userInput.value;
-                userMessage.classList.add('chat-message', 'user');
-                chatBox.appendChild(userMessage);
-
-                const config = botConfig[botId - 1];
-                try {
-                    const response = await fetch(`https://app.customgpt.ai/api/v1/projects/${config.projectID}/conversations/${config.sessionID}/messages`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': config.authToken
-                        },
-                        body: JSON.stringify({ prompt: userInput.value, response_source: "default" })
-                    });
-
-                    const data = await response.json();
-                    const botMessage = document.createElement('div');
-                    botMessage.textContent = data.data?.openai_response || "Sorry, I couldn't understand that.";
-                    botMessage.classList.add('chat-message', 'bot');
-                    chatBox.appendChild(botMessage);
-
-                    chatBox.scrollTop = chatBox.scrollHeight;
-                } catch (error) {
-                    console.error('Error:', error);
-                }
-
-                userInput.value = '';
-                userInput.style.height = 'auto';
-            }
-        }
-
-        document.getElementById('userInput1').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                sendMessage(1);
-            }
-        });
-
-        document.getElementById('userInput1').addEventListener('input', function () {
-            this.style.height = 'auto';
-            this.style.height = (this.scrollHeight) + 'px';
-        });
-    </script>
 </body>
 
 </html>
